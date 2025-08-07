@@ -9,6 +9,13 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  build: {
+    rollupOptions: {
+      external: [],
+    },
+    target: 'esnext',
+    minify: 'terser',
+  },
   plugins: [
     react(),
     mode === 'development' &&

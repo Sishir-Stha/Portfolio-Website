@@ -8,7 +8,7 @@ const HeroSection = () => {
     'Full Stack Developer',
     'SQL Developer',
     'JAVA SpringBoot Developer',
-    'Data Analystics'
+    'Data Analytics'
   ];
 
   const scrollToSection = (sectionId: string) => {

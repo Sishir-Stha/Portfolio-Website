@@ -12,6 +12,13 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       external: [],
+      onwarn(warning, warn) {
+        // Ignore warnings about missing optional dependencies
+        if (warning.code === 'MODULE_NOT_FOUND' && warning.message.includes('@rollup/rollup-linux-x64-gnu')) {
+          return;
+        }
+        warn(warning);
+      }
     },
     target: 'esnext',
     minify: 'terser',
